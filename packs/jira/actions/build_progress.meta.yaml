@@ -1,0 +1,17 @@
+---
+# Action definition metadata
+name: jira_build_progress
+description: "Update JIRA with Platform.sh build progress"
+runner_type: "action-chain"
+entry_point: "chains/build_progress.yaml"
+
+parameters:
+  issue:
+    type: "string"
+    required: true
+  territory:
+    type: "string"
+    required: true
+
+enabled: true
+

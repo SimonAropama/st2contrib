@@ -1,0 +1,18 @@
+---
+  chain:
+    -
+      name: "get_info"
+      ref: "core.local"
+      parameters: 
+        cmd: "/home/stanley/scripts/getinfo.sh {{issue}}"
+      on-success: "update_jira"
+    -
+     name: "update_jira"
+     ref: "jira.update_custom_text_field"
+     parameters:
+       issue_key: "{{issue}}"
+       comment_text: "{{get_info.stdout}}"
+       custom_field: "Build Progress"
+       territory: "{{territory}}"
+    
+  default: "get_info"
