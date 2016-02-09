@@ -1,0 +1,11 @@
+---
+name: search_jira
+runner_type: run-python
+description: Search JIRA fro issues
+enabled: true
+entry_point: search_jira.py
+parameters:
+  issue_type:
+    type: string
+    description: the issue type.
+    required: true

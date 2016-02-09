@@ -1,0 +1,14 @@
+---
+  class_name: "TestJIRASensor"
+  entry_point: "test_jira_sensor.py"
+  description: "Action  which queires JIRA for new tickets"
+  poll_interval: 30
+  trigger_types:
+    -
+      name: "issue_query"
+      description: "Query issues in JIRA"
+      payload_schema:
+        type: "object"
+        properties:
+          project:
+            type: "string"

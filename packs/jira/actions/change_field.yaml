@@ -1,0 +1,11 @@
+---
+name: change_field
+runner_type: run-python
+description: Change a JIRA field.
+enabled: true
+entry_point: change_field.py
+parameters:
+  issue_key:
+    type: string
+    description: Issue key (e.g. PROJECT-1000).
+    required: true

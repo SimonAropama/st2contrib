@@ -1,0 +1,26 @@
+---
+name: update_custom_text_field
+runner_type: run-python
+description: Update a JIRA custom text field.
+enabled: true
+entry_point: update_custom_textfield.py
+parameters:
+  comment_text:
+    type: string
+    description: the comment itself.
+    required: true
+  custom_field:
+    type: string
+    description: The custom field to update
+    enum:
+      - Environment
+      - Build Progress
+    default: Environment
+    required: true
+  issue_key:
+    type: string
+    description: Issue key (e.g. PROJECT-1000).
+    required: true
+  territory:
+    type: string
+    description: The territory the build is for.

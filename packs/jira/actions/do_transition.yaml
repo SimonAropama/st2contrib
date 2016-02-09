@@ -1,0 +1,21 @@
+---
+name: do_transition
+runner_type: run-python
+description: Create a new JIRA issue / ticket.
+enabled: true
+entry_point: do_transition.py
+parameters:
+  type:
+    type: string
+    description: Issue type.
+    enum:
+      - Open
+      - In Progress
+      - Review
+      - Done
+    default: To Do
+    required: true
+  issue_number:
+    type: string
+    description: destination Issue in Jira.
+    required: true
